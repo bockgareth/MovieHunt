@@ -5,19 +5,19 @@
 <body>
  <?php
    session_start();
-  echo $_SESSION['currentUser'];
+  //echo $_SESSION['currentUser'];
   $points = $_POST["points"];
   $emo = $_POST["emo"];
   $combo = array_combine($emo,$points);
 
-  print_r($combo);
+  // print_r($combo);
   $value = max($combo);
   $word = array_search($value, $combo);
  // $key = array_search($word, $combo);
   $maxs = array_search($word, $emo);
-  echo "<p> your number: $value </p></ br>";
-  echo "<p> your word: $word</p></ br>";
-  echo "<p> your key: $maxs</p></ br>";
+  // echo "<p> your number: $value </p></ br>";
+  // echo "<p> your word: $word</p></ br>";
+  // echo "<p> your key: $maxs</p></ br>";
 
  
   switch($maxs){
@@ -31,7 +31,7 @@
     $SQLString3 = "SELECT * FROM tbl_movie WHERE genre = 'Romance' ORDER BY RAND() LIMIT 1";
     $QueryRo = $conn->query($SQLString3);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
@@ -76,7 +76,7 @@
     $SQLString3 = "SELECT * FROM tbl_movie WHERE genre = 'Musical'  ORDER BY RAND() LIMIT 1";
     $QueryRo = $conn->query($SQLString3);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
@@ -122,7 +122,7 @@
     $SQLString3 = "SELECT * FROM tbl_movie WHERE genre = 'Action'  ORDER BY RAND() LIMIT 1";
     $QueryRo = $conn->query($SQLString3);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
@@ -170,7 +170,7 @@
     $SQLString4 = "SELECT * FROM tbl_movie WHERE genre = 'Thriller'  ORDER BY RAND() LIMIT 1";
     $QueryTh = $conn->query($SQLString4);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
@@ -223,7 +223,7 @@
     $SQLString3 = "SELECT * FROM tbl_movie WHERE genre = 'Thriller'  ORDER BY RAND() LIMIT 1";
     $QueryRo = $conn->query($SQLString3);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
@@ -269,7 +269,7 @@
     $SQLString3 = "SELECT * FROM tbl_movie WHERE genre = 'Action' ORDER BY RAND() LIMIT 1";
     $QueryRo = $conn->query($SQLString3);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
@@ -315,7 +315,7 @@
     $SQLString3 = "SELECT * FROM tbl_movie WHERE genre = 'Fantasy' ORDER BY RAND() LIMIT 1";
     $QueryRo = $conn->query($SQLString3);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
@@ -361,7 +361,7 @@
     $SQLString3 = "SELECT * FROM tbl_movie WHERE genre = 'Musical' ORDER BY RAND() LIMIT 1";
     $QueryRo = $conn->query($SQLString3);
      ?>
-     Your Movie suggestions are:
+     <!-- Your Movie suggestions are: -->
      <table align="center" border ="2" id="myTable">
      <thead>
      <tr>
