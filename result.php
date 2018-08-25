@@ -3,6 +3,7 @@
 <title>View your results</title>
 </head>
 <body>
+<div class="container well">
  <?php
    session_start();
   //echo $_SESSION['currentUser'];
@@ -46,24 +47,24 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]); ?></a></td>
                   <td><?php echo $rows["genre"];?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]); ?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
-    <?php  } displayRecommendations();
+    <?php  } if (isset($_SESSION['currentUser'])) displayRecommendations();
     break;
     
     case 1:
@@ -91,24 +92,24 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]); ?></a></td>
                   <td><?php echo $rows["genre"];?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]);?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]);?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
-    <?php  } displayRecommendations();
+    <?php  } if (isset($_SESSION['currentUser'])) displayRecommendations();
       break;
     
     case 2:
@@ -137,24 +138,24 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]); ?></a></td>
                   <td><?php echo $rows["genre"];?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]); ?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
-    <?php  } displayRecommendations();
+    <?php  } if (isset($_SESSION['currentUser'])) displayRecommendations();
       break;
     
     case 3:
@@ -185,31 +186,31 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]); ?></a></td>
                   <td><?php echo $rows["genre"];?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]); ?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
     <?php  } 
             while ($rowsss = $QueryTh->fetch_assoc()) {            
               ?>
                           <td><?php echo $rowsss["actor"];?></td>
-                          <td><a href="https://www.google.co.za/search?q=<?php echo $rowsss['movie_title']?>" target="_blank"><?php echo $rowsss["movie_title"]; populateRecommendation($rowsss["movie_title"]); ?></a></td>
+                          <td><a href="https://www.google.co.za/search?q=<?php echo $rowsss['movie_title']?>" target="_blank"><?php echo $rowsss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowsss["movie_title"]); ?></a></td>
                           <td><?php echo $rowsss["genre"];?></td> 
             </tr>
-            <?php  } displayRecommendations();
+            <?php  } if (isset($_SESSION['currentUser'])) displayRecommendations();
       break;
     
     case 4:
@@ -238,24 +239,24 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]); ?></a></td>
                   <td><?php echo $rows["genre"];?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]); ?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
-    <?php  } displayRecommendations();
+    <?php  } if (isset($_SESSION['currentUser'])) displayRecommendations();
       break;
     
     case 5:
@@ -284,24 +285,24 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]);?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]);?></a></td>
                   <td><?php echo $rows["genre"]; ?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]);?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]);?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
-    <?php  } displayRecommendations();
+    <?php  } if (isset($_SESSION['currentUser'])) displayRecommendations();
       break;
     
     case 6:
@@ -330,24 +331,24 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]); ?></a></td>
                   <td><?php echo $rows["genre"];?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]); ?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
-    <?php  } displayRecommendations();
+    <?php  } if (isset($_SESSION['currentUser'])) displayRecommendations();
       break;
     
     case 7:
@@ -376,24 +377,28 @@
      while ($row = $QueryAn->fetch_assoc()) {
        ?>
       <td><?php echo $row["actor"];?></td>
-      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; populateRecommendation($row["movie_title"]); ?></a></td>
+      <td><a href="https://www.google.co.za/search?q=<?php echo $row['movie_title']?>" target="_blank"><?php echo $row["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($row["movie_title"]); ?></a></td>
       <td><?php echo $row["genre"];?></td> 
       </tr>
 <?php } 
       while ($rows = $QueryCo->fetch_assoc()) { 
         ?>
         <td><?php echo $rows["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; populateRecommendation($rows["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rows['movie_title']?>" target="_blank"><?php echo $rows["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rows["movie_title"]); ?></a></td>
                   <td><?php echo $rows["genre"];?></td> 
     </tr>
     <?php  } 
         while ($rowss = $QueryRo->fetch_assoc()) {            
       ?>
                   <td><?php echo $rowss["actor"];?></td>
-                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; populateRecommendation($rowss["movie_title"]); ?></a></td>
+                  <td><a href="https://www.google.co.za/search?q=<?php echo $rowss['movie_title']?>" target="_blank"><?php echo $rowss["movie_title"]; if (isset($_SESSION['currentUser'])) populateRecommendation($rowss["movie_title"]); ?></a></td>
                   <td><?php echo $rowss["genre"];?></td> 
     </tr>
-    <?php  } displayRecommendations();
+    <?php  } 
+    
+    if (isset($_SESSION['currentUser'])) {
+      displayRecommendations();
+    }
       break;
     
     default:
@@ -449,5 +454,6 @@
 
 <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>">Back</a>
 <h2>Your Recommendations</h2>
+</div>
 </body>
 </html>

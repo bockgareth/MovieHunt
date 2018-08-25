@@ -64,7 +64,7 @@ session_start();
               loadForm($email, $pass);
             }
           }
-        } else { echo $rowCount; echo $email; echo $hashed; ?>
+        } else { /*echo $rowCount; echo $email; echo $hashed; */?>
         
           <br><div class="alert alert secondary">This user is not registered. Would you like to sign up?</div><br>
           <a href="signup.php"><input type="button" value="Sign up" class="btn btn-primary"></a><?php
